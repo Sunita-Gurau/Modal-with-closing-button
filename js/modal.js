@@ -1,24 +1,25 @@
-const overLay= document.querySelector('#overlay');
-const modalSection= document.querySelector('#modal-section');
-const clickModal= document.querySelector('#click-modal');
-const closemodal= document.querySelector('#close-modal');
-const closeButton= document.querySelector('#close-button');
+const overLay= document.getElementById('overlay');
+const modalSection= document.getElementById('modal-section');
+const clickModal= document.getElementById('click-modal');
+const closemodal= document.getElementById('close-modal');
+const closeButton= document.getElementById('close-button');
 
 clickModal.addEventListener('click',()=>{
-
-    overLay.classList.toggle('hidden');
-    modalSection.classList.toggle('hidden');
+    overLay.classList.remove('hidden');
+    modalSection.classList.add('hidden');
  
    
 })
 
-const toggleModal = () =>{
-    overLay.classList.toggle('hidden');
-    modalSection.classList.toggle('hidden');
+const hideDialog = () =>{
+    overLay.classList.add('hidden');
+    modalSection.classList.remove('hidden');
 
 }
-closemodal.addEventListener('click',toggleModal)
-closeButton.addEventListener('click',toggleModal)
+
+overLay.addEventListener('click',hideDialog)
+closemodal.addEventListener('click',hideDialog)
+closeButton.addEventListener('click',hideDialog)
 
 
 
