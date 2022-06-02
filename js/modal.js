@@ -3,6 +3,8 @@ const modalSection= document.getElementById('modal-section');
 const clickModal= document.getElementById('click-modal');
 const closemodal= document.getElementById('close-modal');
 const closeButton= document.getElementById('close-button');
+const whiteBox= document.getElementById('White-box');
+
 
 clickModal.addEventListener('click',()=>{
     overLay.classList.remove('hidden');
@@ -11,7 +13,8 @@ clickModal.addEventListener('click',()=>{
    
 })
 
-const hideDialog = () =>{
+const hideDialog = (evt) =>{
+    evt.stopPropagation();
     overLay.classList.add('hidden');
     modalSection.classList.remove('hidden');
 
@@ -22,6 +25,11 @@ closemodal.addEventListener('click',hideDialog)
 closeButton.addEventListener('click',hideDialog)
 
 
+whiteBox.addEventListener('click',(e)=>{
+    e.stopPropagation();
+ 
+   
+})
 
 
 // closemodal.addEventListener('click',()=>{
